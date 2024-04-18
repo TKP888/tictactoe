@@ -19,6 +19,7 @@ h1{
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     justify-items: center;
+    background-color: #121212;
     padding: 10px;
     width: 600px;
     height: 600px;
@@ -85,15 +86,17 @@ input{
 
 .square{
     border: 1px solid black;
-    width: 90%;
-    height: 90%;
-    margin: 10px;
+    width: 80%;
+    height: 80%;
+    /* margin: 10px; */
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: #f1f1f1;
     float: left;
-    font-size: 80px;
+    
+    font-size: 50px;
 }
 
