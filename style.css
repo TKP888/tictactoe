@@ -1,0 +1,99 @@
+body{
+    display: grid;
+    align-content: center;
+ 
+    justify-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    
+}
+
+#gameboard {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    padding: 10px;
+    width: 600px;
+    height: 600px;
+    margin: 50px;
+    border: 1px solid black;
+}
+
+#controls{
+    display: flex;
+    width: 1200px;
+    justify-content: space-around;
+    padding: 10px;
+    border: 5px solid #f1f1f1;
+    background-color: #ffedd5;
+    border-radius: 15px;
+    padding: 20px 0 20px 0 ;
+    
+}
+
+input{
+    width: 300px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#start{
+    background-color: #dcfce7;
+    border: none;
+    border-radius: 10px;
+    font-weight: bolder;
+    padding: 20px;
+    width: 150px;
+}
+
+
+#start:hover{
+    background-color: #549f62;
+    border: none;
+    border-radius: 10px;
+    font-weight: bolder;
+    padding: 20px;
+    width: 150px;
+}
+
+#restart{
+    background-color: #fed7aa;
+    border: none;
+    border-radius: 10px;
+    font-weight: bolder;
+    padding: 20px;
+    width: 150px;
+}
+
+#restart:hover{
+    background-color: #9e7a37;
+    border: none;
+    border-radius: 10px;
+    font-weight: bolder;
+    padding: 20px;
+    width: 150px;
+}
+
+.square{
+    border: 1px solid black;
+    width: 90%;
+    height: 90%;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    float: left;
+    font-size: 80px;
+}
+
