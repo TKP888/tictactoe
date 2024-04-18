@@ -64,7 +64,13 @@ const game = (() => {
 
         gameboard.update(index, players[currentPlayerIndex].mark);
           
-    
+    if (checkWin(gameboard.getGameboard(), players[currentPlayerIndex].mark)){
+        gameOver = true;
+        alert (`${players[currentPlayerIndex].name} won!`)
+    } else if (checkTie(gameboard.getGameboard())){
+        gameOver = true;
+        alert(`It's a draw!`);
+    }
 
     currentPlayerIndex = currentPlayerIndex === 0 ? 1 : 0;
     }
@@ -80,11 +86,37 @@ const game = (() => {
     return {
         start,
         restart,
-        handleClick
+        handleClick,
+        checkWin,
+        checkTie
     }
 })();
 
+function checkWin(board) {
+    const winCombo = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+    for (let i = 0; i < winCombo.length; i++) {
+        const [a, b, c] = winCombo[i];
+        if (board[a] && board[a] === board[b] && board[a] === board[c]){
+            return true;
+        }
+    }
+    return false; 
+}
 
+
+function checkTie(board) {
+    return board.every(cell => cell !== "");
+
+}
 
 const startButton = document.querySelector("#start");
 startButton.addEventListener("click", ()=>{
