@@ -1,4 +1,16 @@
-const gameboard = (() =>{
+const displayMessage = (() => {
+    const renderMessage = (message) => {
+        document.querySelector("#message").innerHTML = message;
+    };
+
+    return {
+        renderMessage
+    };
+})();
+
+
+
+const gameboard = (() => {
     let gameboard = ["", "", "", "", "", "", "", "", ""];
 
     const render = () => {
@@ -57,6 +69,10 @@ const game = (() => {
     }
 
     const handleClick = (event) => {
+if (gameOver){
+return;
+}
+    
         let index = parseInt(event.target.id.split("-")[1]);
         if (gameboard.getGameboard()[index] !== "")
         return;
@@ -66,10 +82,10 @@ const game = (() => {
           
     if (checkWin(gameboard.getGameboard(), players[currentPlayerIndex].mark)){
         gameOver = true;
-        alert (`${players[currentPlayerIndex].name} won!`)
+       displayMessage.renderMessage(`${players[currentPlayerIndex].name} won!`)
     } else if (checkTie(gameboard.getGameboard())){
         gameOver = true;
-        alert(`It's a draw!`);
+        displayMessage.renderMessage(`It's a draw!`);
     }
 
     currentPlayerIndex = currentPlayerIndex === 0 ? 1 : 0;
@@ -80,6 +96,8 @@ const game = (() => {
             gameboard.update(i,"");
         }
         gameboard.render();
+        gameOver = false;
+        document.querySelector("#message").innerHTML = "";
     }
 
 

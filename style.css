@@ -96,7 +96,14 @@ input{
     text-align: center;
     background-color: #f1f1f1;
     float: left;
-    
+    outline: none; 
     font-size: 50px;
 }
 
+#message{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
